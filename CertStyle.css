@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    font-family: Arial, sans-serif;
+    align-items: center;
+}
+
+header {
+    background-color: #00796b;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-list li {
+    display: inline;
+    margin: 0 20px;
+}
+
+.nav-list a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-list a:hover {
+    color: #ffd54f;
+}
+
+h2 {
+    color: #4caf50;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.certificates-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;        /* ✅ centers cards */
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;             /* ✅ centers container */
+    padding: 20px;
+}
+
+/* Existing certificate styles */
+.certificate {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    border: 1px solid #ccc; /* Light border */
+    padding: 15px;
+    margin: 15px auto; /* Margin between experiences */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 100%; /* Full width of the container */
+    max-width: 600px; /* Limit maximum width */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-origin: center /* Smooth hover effect */
+}
+
+/* ✅ Hover zoom effect */
+.certificate:hover {
+   
+    transform: scale(1.02); /* Slight zoom */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Slight zoom on hover */
+
+}
+
+
+.certificate h4 {
+    text-align: center;
+    color: #00796b;
+    margin-bottom: 15px;
+}
+
+.certificate ul {
+    padding-left: 20px;
+}
+
+.certificate li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.credential-link {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 0.85rem;
+    color: #00796b;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.credential-link:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    margin: 30px 0;
+    color: #555;
+}
