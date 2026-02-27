@@ -1,118 +1,260 @@
-body {
+/* Global Styles */
+* {
     margin: 0;
-    background-color: #f4f4f4;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: #333;
-    font-family: Arial, sans-serif;
-    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
-    background-color: #00796b;
-    color: white;
-    padding: 40px 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    color: #333;
+    padding: 30px 20px;
     text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 2.8em;
     margin: 0;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 nav {
-    margin-top: 20px;
+    margin: 25px 0 10px;
 }
 
 .nav-list {
     list-style: none;
     padding: 0;
-    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .nav-list li {
-    display: inline;
-    margin: 0 20px;
+    margin: 5px;
 }
 
 .nav-list a {
-    color: white;
+    color: #555;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
 .nav-list a:hover {
-    color: #ffd54f;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+main {
+    flex: 1;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 h2 {
-    color: #4caf50;
+    color: #333;
     text-align: center;
+    font-size: 2.2em;
     margin: 30px 0;
+    position: relative;
+    padding-bottom: 15px;
 }
 
-.certificates-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;        /* ✅ centers cards */
-    justify-content: center;
-    max-width: 1000px;
-    margin: 0 auto;             /* ✅ centers container */
-    padding: 20px;
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border-radius: 2px;
 }
 
-/* Existing certificate styles */
+/* Certificate Cards */
 .certificate {
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
-    border: 1px solid #ccc; /* Light border */
-    padding: 15px;
-    margin: 15px auto; /* Margin between experiences */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    width: 100%; /* Full width of the container */
-    max-width: 600px; /* Limit maximum width */
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    transform-origin: center /* Smooth hover effect */
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 30px auto;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    max-width: 800px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* ✅ Hover zoom effect */
 .certificate:hover {
-   
-    transform: scale(1.02); /* Slight zoom */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Slight zoom on hover */
-
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 45px rgba(102, 126, 234, 0.3);
 }
-
 
 .certificate h4 {
+    color: #667eea;
+    font-size: 1.6em;
+    margin-bottom: 10px;
     text-align: center;
-    color: #00796b;
-    margin-bottom: 15px;
+}
+
+.certificate p {
+    color: #666;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.1em;
 }
 
 .certificate ul {
-    padding-left: 20px;
+    list-style: none;
+    padding: 0;
 }
 
 .certificate li {
-    margin-bottom: 12px;
-    line-height: 1.6;
+    background: rgba(102, 126, 234, 0.05);
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+    transition: all 0.3s ease;
+}
+
+.certificate li:hover {
+    background: rgba(102, 126, 234, 0.1);
+    transform: translateX(10px);
+}
+
+.certificate li strong {
+    color: #333;
+    font-size: 1.1em;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.certificate li br {
+    display: none;
+}
+
+.certificate li::before {
+    display: none;
 }
 
 .credential-link {
     display: inline-block;
-    margin-top: 5px;
-    font-size: 0.85rem;
-    color: #00796b;
-    font-weight: bold;
+    margin-top: 12px;
+    padding: 8px 20px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
     text-decoration: none;
+    border-radius: 25px;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .credential-link:hover {
-    text-decoration: underline;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
 footer {
     text-align: center;
-    margin: 30px 0;
-    color: #555;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    margin-top: auto;
 }
+
+footer hr {
+    display: none;
+}
+
+footer p {
+    color: #555;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+    
+    h2 {
+        font-size: 1.8em;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-list li {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .nav-list a {
+        display: block;
+        padding: 12px;
+    }
+    
+    .certificate {
+        padding: 20px;
+        margin: 20px 15px;
+    }
+    
+    .certificate h4 {
+        font-size: 1.3em;
+    }
+    
+    .certificate li {
+        padding: 15px;
+    }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.certificate {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.certificate:nth-child(2) { animation-delay: 0.2s; }
+.certificate:nth-child(3) { animation-delay: 0.4s; }
+.certificate:nth-child(4) { animation-delay: 0.6s; }
